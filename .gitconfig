@@ -3,3 +3,5 @@
 	name = seong
 [core]
 	editor = vim
+[push]
+	default = simple
