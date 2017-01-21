@@ -1,0 +1,31 @@
+alias tm=/usr/bin/tmux -2 -f /home/seong/.tmux.conf
+tmux() {
+	SESSION=main
+	
+	# if the session is already running, just attach to it.
+	tm has-session -t $SESSION
+	if [ $? -eq 0 ]; then
+	       echo "Session $SESSION already exists. Attaching."
+	       sleep 1
+	       tm attach -t $SESSION
+	       exit 0;
+	fi
+	                                 
+	# create a new session, named $SESSION, and detach from it
+	tm new-session -d -s $SESSION
+	tm new-window    -t $SESSION:0 
+	tm split-window  -h -t $SESSION:0
+	tm new-window    -t $SESSION:1 
+	tm new-window    -t $SESSION:2  
+	tm new-window    -t $SESSION:3  
+	tm split-window  -h -t $SESSION:3
+	tm new-window    -t $SESSION:4
+	tm select-window -t $SESSION:0
+	tm attach -t $SESSION
+}
+
+TERM=xterm-256color
+
+export PATH=$PATH:~/go/bin:~/bin
+export GOPATH=~/workspace/go
+export PATH=$PATH:$GOPATH/bin

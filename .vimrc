@@ -10,6 +10,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
+let g:molokai_original = 1
+
 set incsearch
 set hlsearch
 
