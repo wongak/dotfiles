@@ -1,7 +1,10 @@
 [user]
 	email = kang.seongmin@gmail.com
 	name = seong
+	signingkey = BFD40B44
 [core]
 	editor = vim
 [push]
 	default = simple
+[commit]
+	gpgsign = true
