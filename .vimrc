@@ -8,6 +8,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'majutsushi/tagbar'
 	Plug 'ctrlpvim/ctrlp.vim'
+	Plug 'myusuf3/numbers.vim'
+	Plug 'tpope/vim-fugitive'
+	Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 let g:molokai_original = 1
@@ -67,3 +70,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" numbers.vim
+nnoremap <F3> :NumbersToggle<CR>
+
