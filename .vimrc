@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'myusuf3/numbers.vim'
 	Plug 'tpope/vim-fugitive'
 	Plug 'easymotion/vim-easymotion'
+	Plug 'mbbill/undotree'
 call plug#end()
 
 let g:molokai_original = 1
@@ -24,9 +25,8 @@ map <C-t> :NERDTreeToggle<CR>
 map <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
-autocmd FileType go nmap <leader>t  <Plug>(go-test)
-autocmd FileType go nmap <leader>b  <Plug>(go-build)
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <leader>i <Plug>(go-info)
+au FileType go nmap <leader>ds <Plug>(go-def-split)
 
 set t_Co=256
 colorscheme molokai
@@ -73,4 +73,7 @@ nnoremap <C-l> <C-w>l
 
 " numbers.vim
 nnoremap <F3> :NumbersToggle<CR>
+
+" undotree
+nnoremap <leader>u :UndotreeToggle<CR>
 
