@@ -25,6 +25,9 @@ map <C-t> :NERDTreeToggle<CR>
 map <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
+map <leader> <Plug>(easymotion-prefix)
+
+au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>i <Plug>(go-info)
 au FileType go nmap <leader>ds <Plug>(go-def-split)
 
@@ -76,4 +79,8 @@ nnoremap <F3> :NumbersToggle<CR>
 
 " undotree
 nnoremap <leader>u :UndotreeToggle<CR>
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
 
