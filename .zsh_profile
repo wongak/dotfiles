@@ -30,5 +30,11 @@ export PATH=$PATH:~/go/bin:~/bin
 export GOPATH=~/workspace/go
 export PATH=$PATH:$GOPATH/bin
 
-eval $(gpg-agent --daemon)
-export GPG_TTY=$(tty)
+
+export $(/usr/bin/gnome-keyring-daemon --start)
+
+#if [ "$DESKTOP_SESSION" = "lightdm-xsession" ]; then
+#	export $(gnome-keyring-daemon -s)
+#fi
+#eval $(gpg-agent --daemon)
+#export GPG_TTY=$(tty)

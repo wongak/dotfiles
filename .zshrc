@@ -89,3 +89,7 @@ ssh-unlock() {
 }
 
 source ~/.zsh_profile
+
+export NVM_DIR="/home/seong/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
