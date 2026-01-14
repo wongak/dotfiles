@@ -25,7 +25,9 @@ return require('packer').startup(function(use)
 
 	use('preservim/tagbar')
 
-	use{'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+	use{'nvim-treesitter/nvim-treesitter', lazy = false, run = ':TSUpdate' }
+
+	use{'rmagatti/auto-session', lazy = false}
 
 	use({
 		"stevearc/aerial.nvim",

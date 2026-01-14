@@ -1,3 +1,4 @@
+
 local lsp = require('lsp-zero')
 lsp.extend_lspconfig()
 
@@ -161,30 +162,24 @@ cmp.setup.cmdline(':', {
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require'lspconfig'
-local servers = { 'gopls', 'ccls', 'cmake', 'templ', 'htmx' }
+local servers = { 'gopls', 'templ' }
 local on_attach = function(client, bufnr)
     require "lsp_signature".on_attach(signature_setup, bufnr)  -- Note: add in lsp client on-attach
 end
 for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup({
+	vim.lsp.config(lsp, {
 		on_attach = on_attach,
 	  capabilities = capabilities,
   })
 end
-lspconfig.html.setup({
+vim.lsp.config('html', {
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { "html", "templ" },
 })
-lspconfig.htmx.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { "html", "templ" },
-})
-lspconfig.tailwindcss.setup({
+vim.lsp.config('tailwindcss', {
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { "templ", "astro", "javascript", "typescript", "react" },
-    init_options = { userLanguages = { templ = "html" } },
+    init_options = { includeLanguages = { templ = "html" } },
 })
