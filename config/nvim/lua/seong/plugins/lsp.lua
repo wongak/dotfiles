@@ -1,9 +1,8 @@
 return {
 	{
 		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v3.x',
 		dependencies = {
-			{ 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+			{ 'VonHeikemen/lsp-zero.nvim' },
 			{ 'neovim/nvim-lspconfig' },
 			{ 'williamboman/mason.nvim' },
 			{ 'williamboman/mason-lspconfig.nvim' },
@@ -14,6 +13,7 @@ return {
 			{ 'hrsh7th/cmp-path' },
 			{ 'saadparwaiz1/cmp_luasnip' },
 			{ 'rafamadriz/friendly-snippets' },
+			{ 'ray-x/lsp_signature.nvim'},
 		},
 		config = function()
 			local lsp = require('lsp-zero')
