@@ -200,6 +200,10 @@ return {
 				filetypes = { "templ", "astro", "javascript", "typescript", "react" },
 				init_options = { includeLanguages = { templ = "html" } },
 			})
+
+			vim.diagnostic.config({
+				virtual_text = true
+			})
 		end
 	}
 }
